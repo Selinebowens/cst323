@@ -29,8 +29,10 @@ public class SecurityConfig {
                 .loginPage("/login")
                 .defaultSuccessUrl("/users", true)
                 .permitAll())
-            .logout(logout -> logout.logoutSuccessUrl("/").permitAll());
+            .logout(logout -> logout.logoutSuccessUrl("/").permitAll())
 
+        .csrf(csrf -> csrf.disable());
+        
         return http.build();
 }
 	 @Bean
